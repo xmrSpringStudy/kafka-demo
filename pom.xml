@@ -11,32 +11,32 @@
 
 	<name>kafka-demo</name>
 	<url>http://maven.apache.org</url>
-<repositories>
-    <repository>
-      <id>maven-net-cn</id>
-      <name>Maven China Mirror</name>
-      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>maven-net-cn</id>
-      <name>Maven China Mirror</name>
-      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>    
-    </pluginRepository>
-  </pluginRepositories>
+	<repositories>
+		<repository>
+			<id>maven-net-cn</id>
+			<name>Maven China Mirror</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>maven-net-cn</id>
+			<name>Maven China Mirror</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -56,25 +56,44 @@
 			<version>3.4.12</version>
 			<type>pom</type>
 		</dependency>
-	<dependency>
-	    <groupId>log4j</groupId>
-	    <artifactId>log4j</artifactId>
-	    <version>1.2.17</version>
-	</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
 
-<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
-<dependency>
-    <groupId>org.apache.kafka</groupId>
-    <artifactId>kafka_2.12</artifactId>
-    <version>1.1.0</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
-<dependency>
-    <groupId>org.apache.kafka</groupId>
-    <artifactId>kafka-clients</artifactId>
-    <version>1.0.0</version>
-</dependency>
-
+		<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka_2.12</artifactId>
+			<version>1.0.0</version>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>jmxri</artifactId>
+					<groupId>com.sun.jmx</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jms</artifactId>
+					<groupId>javax.jms</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jmxtools</artifactId>
+					<groupId>com.sun.jdmk</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-clients</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.7</version>
+		</dependency>
 	</dependencies>
-	
+
 </project>
